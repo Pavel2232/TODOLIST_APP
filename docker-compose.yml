@@ -1,0 +1,14 @@
+version: '3.8'
+
+services:
+  Todotable:
+    image: postgres:12.4-alpine
+    environment:
+      POSTGRES_USER: test
+      POSTGRES_PASSWORD: test
+      POSTGRES_DB: test
+    restart: always
+    ports:
+    - "5432:5432"
+    volumes:
+      - ./postgres_data:/var/lib/postgresql/data

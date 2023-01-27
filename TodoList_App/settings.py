@@ -46,6 +46,8 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'core',
+
 ]
 
 MIDDLEWARE = [
@@ -84,8 +86,8 @@ WSGI_APPLICATION = 'TodoList_App.wsgi.application'
 
 
 DATABASES = {
-    'default': env.db_url('SQLITE_URL', default='sqlite:///my-local-sqlite.db'),
-    'extra':env.db()
+    'extra': env.db_url('SQLITE_URL', default='sqlite:///my-local-sqlite.db'),
+    'default':env.db()
 }
 
 
@@ -130,3 +132,6 @@ STATIC_URL = 'static/'
 # https://docs.djangoproject.com/en/4.1/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+
+AUTH_USER_MODEL = "core.User"
