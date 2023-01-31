@@ -6,5 +6,4 @@ phonenumberslite==8.13.4
 Pillow==9.4.0
 psycopg2==2.9.5
 sqlparse==0.4.3
--e git+https://github.com/Pavel2232/TODOLIST_APP.git@f96358643b2b96096591f32c65ba7e6316358bb3#egg=todolist_app
 tzdata==2022.7
