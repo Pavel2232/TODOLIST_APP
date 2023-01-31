@@ -87,7 +87,7 @@ WSGI_APPLICATION = 'TodoList_App.wsgi.application'
 
 DATABASES = {
     'extra': env.db_url('SQLITE_URL', default='sqlite:///my-local-sqlite.db'),
-    'default':env.db()
+    'default':env.db('DATABASE_URL')
 }
 
 

@@ -10,10 +10,7 @@ services:
       api:
         condition: service_started
   api:
-    build:
-      context: .
-    environment:
-      DATABASE_URL: psql://test:test@db:5432/test
+    image: pavel2232/todolidy:$GITHUB_REF_NAME-$GITHUB_RUN_ID
     ports:
       - 8000:8000
     depends_on:
@@ -26,9 +23,9 @@ services:
   db:
     image: postgres:12.4-alpine
     environment:
-      POSTGRES_USER: test
-      POSTGRES_PASSWORD: test
-      POSTGRES_DB: test
+      POSTGRES_USER: $DB_USER
+      POSTGRES_PASSWORD: $DB_PASSWORD
+      POSTGRES_DB: $DB_NAME
     restart: always
     ports:
     - "5432:5432"
