@@ -1,3 +1,4 @@
+#file: noinspection YAMLSchemaValidation
 name: Build and deploy workflow
 on: [push]
 jobs:
@@ -42,6 +43,5 @@ jobs:
           username: ${{ secrets.USERNAME }}
           password: ${{ secrets.PASSWORD }}
           script: |
-            cd TODOLIST_APP
             echo ${{ secrets.PASSWORD }} | sudo -S docker-compose down
             echo ${{ secrets.PASSWORD }} | sudo -S docker-compose up -d
